@@ -1,0 +1,22 @@
+{
+  "name": "msgraph-calendar-examples",
+  "version": "1.0.0",
+  "description": "Examples for @boneconsulting/msgraph-calendar",
+  "private": true,
+  "scripts": {
+    "basic": "ts-node basic-usage.ts",
+    "team": "ts-node team-availability.ts",
+    "book": "ts-node book-meeting.ts",
+    "diagnostic": "ts-node diagnostic.ts"
+  },
+  "dependencies": {
+    "@boneconsulting/msgraph-calendar": "file:..",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.0"
+  }
+}

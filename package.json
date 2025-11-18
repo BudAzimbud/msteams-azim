@@ -1,0 +1,59 @@
+{
+  "name": "msteams-azim",
+  "version": "1.0.0",
+  "description": "A reusable Microsoft Graph service for managing calendar availability and bookings in Singapore timezone",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "microsoft-graph",
+    "calendar",
+    "booking",
+    "availability",
+    "teams",
+    "singapore",
+    "typescript",
+    "msal",
+    "azure",
+    "office365",
+    "scheduling",
+    "meetings"
+  ],
+  "author": "Bone Consulting",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boneconsulting/msgraph-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boneconsulting/msgraph-calendar/issues"
+  },
+  "homepage": "https://github.com/boneconsulting/msgraph-calendar#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "QUICKSTART.md",
+    "CHANGELOG.md"
+  ],
+  "peerDependencies": {
+    "moment": "^2.29.4"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.6.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "moment": "^2.29.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
