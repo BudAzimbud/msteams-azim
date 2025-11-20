@@ -93,7 +93,7 @@ npm publish --access public
 - [ ] Verify login: `npm whoami`
 
 ### Package Name Options
-Current: `@boneconsulting/msgraph-calendar`
+Current: `msteams-azim`
 
 **Option 1**: Keep scoped (recommended)
 - Requires NPM organization "boneconsulting"
@@ -114,7 +114,7 @@ Current: `@boneconsulting/msgraph-calendar`
 ## 📦 After Publishing
 
 ### Verify Publication
-1. Visit: https://www.npmjs.com/package/@boneconsulting/msgraph-calendar
+1. Visit: https://www.npmjs.com/package/msteams-azim
 2. Check version number
 3. Verify README displays correctly
 4. Check package size
@@ -125,13 +125,13 @@ Current: `@boneconsulting/msgraph-calendar`
 mkdir test-install
 cd test-install
 npm init -y
-npm install @boneconsulting/msgraph-calendar moment
+npm install msteams-azim moment
 ```
 
 Create test file:
 ```javascript
 // test.js
-const { MSGraphService } = require('@boneconsulting/msgraph-calendar');
+const { MSGraphService } = require('msteams-azim');
 console.log('Package loaded:', MSGraphService ? '✅' : '❌');
 ```
 
@@ -143,7 +143,7 @@ node test.js
 ### Share with Team
 ```bash
 # Installation command for users
-npm install @boneconsulting/msgraph-calendar moment
+npm install msteams-azim moment
 ```
 
 ---
@@ -177,7 +177,7 @@ Always update `CHANGELOG.md` with changes!
 After users install your package:
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 
 // Initialize
 const service = new MSGraphService({

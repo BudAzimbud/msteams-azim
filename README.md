@@ -1,6 +1,6 @@
-# @boneconsulting/msgraph-calendar
+# msteams-azim
 
-[![npm version](https://badge.fury.io/js/@boneconsulting%2Fmsgraph-calendar.svg)](https://www.npmjs.com/package/@boneconsulting/msgraph-calendar)
+[![npm version](https://badge.fury.io/js/msteams-azim.svg)](https://www.npmjs.com/package/msteams-azim)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 
@@ -20,7 +20,7 @@ A reusable TypeScript library for managing Microsoft Graph calendar availability
 ## Installation
 
 ```bash
-npm install @boneconsulting/msgraph-calendar
+npm install msteams-azim
 ```
 
 ### Peer Dependencies
@@ -48,7 +48,7 @@ Before using this library, you need to set up an Azure AD app registration:
 ## Quick Start
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 
 // Initialize the service
 const graphService = new MSGraphService({
@@ -296,7 +296,7 @@ try {
 ## Complete Example
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 import * as dotenv from 'dotenv';
 
 dotenv.config();

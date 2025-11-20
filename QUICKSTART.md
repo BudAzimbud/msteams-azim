@@ -1,11 +1,11 @@
 # Quick Start Guide
 
-Get started with @boneconsulting/msgraph-calendar in 5 minutes!
+Get started with msteams-azim in 5 minutes!
 
 ## 1. Install the Package
 
 ```bash
-npm install @boneconsulting/msgraph-calendar moment
+npm install msteams-azim moment
 ```
 
 ## 2. Set Up Azure AD App Registration
@@ -49,7 +49,7 @@ From the "Overview" page, copy:
 mkdir my-calendar-app
 cd my-calendar-app
 npm init -y
-npm install @boneconsulting/msgraph-calendar moment dotenv
+npm install msteams-azim moment dotenv
 npm install --save-dev typescript @types/node ts-node
 ```
 
@@ -65,7 +65,7 @@ MICROSOFT_TENANT_ID=your-tenant-id-here
 Create `index.ts`:
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -127,7 +127,7 @@ npx ts-node index.ts
 Run the diagnostic tool:
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 
 const graph = new MSGraphService({
   clientId: process.env.MICROSOFT_CLIENT_ID!,

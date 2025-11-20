@@ -5,7 +5,7 @@
 
 set -e  # Exit on error
 
-echo "🚀 Publishing @boneconsulting/msgraph-calendar to NPM"
+echo "🚀 Publishing msteams-azim to NPM"
 echo "=================================================="
 echo ""
 
@@ -83,10 +83,10 @@ echo ""
 echo "🎉 Successfully published!"
 echo ""
 echo "📦 View your package at:"
-echo "   https://www.npmjs.com/package/@boneconsulting/msgraph-calendar"
+echo "   https://www.npmjs.com/package/msteams-azim"
 echo ""
 echo "📥 Users can now install with:"
-echo "   npm install @boneconsulting/msgraph-calendar"
+echo "   npm install msteams-azim"
 echo ""
 echo "🚀 Next steps:"
 echo "   1. Tag this release in Git"

@@ -1,4 +1,4 @@
-# Publishing Guide for @boneconsulting/msgraph-calendar
+# Publishing Guide for msteams-azim
 
 This guide will walk you through publishing your package to NPM.
 
@@ -47,7 +47,7 @@ Test the package locally before publishing:
 npm link
 
 # In another test project
-npm link @boneconsulting/msgraph-calendar
+npm link msteams-azim
 
 # Test your examples
 cd examples
@@ -70,7 +70,7 @@ Enter your:
 
 ### 6. Publish to NPM
 
-For scoped packages (like `@boneconsulting/msgraph-calendar`):
+For scoped packages (like `msteams-azim`):
 
 ```bash
 # Public package (free)
@@ -89,7 +89,7 @@ npm publish
 
 Check your package at:
 ```
-https://www.npmjs.com/package/@boneconsulting/msgraph-calendar
+https://www.npmjs.com/package/msteams-azim
 ```
 
 ## Package Version Management
@@ -133,12 +133,12 @@ After publishing, test installation in a new project:
 mkdir test-package
 cd test-package
 npm init -y
-npm install @boneconsulting/msgraph-calendar moment
+npm install msteams-azim moment
 ```
 
 Create `test.js`:
 ```javascript
-const { MSGraphService } = require('@boneconsulting/msgraph-calendar');
+const { MSGraphService } = require('msteams-azim');
 
 const service = new MSGraphService({
   clientId: 'test',
@@ -159,7 +159,7 @@ node test.js
 You can only unpublish within 72 hours of publishing:
 
 ```bash
-npm unpublish @boneconsulting/msgraph-calendar@1.0.0
+npm unpublish msteams-azim@1.0.0
 ```
 
 ⚠️ **Warning**: Unpublishing can break projects that depend on your package!
@@ -246,13 +246,13 @@ npm version patch
 npm publish --access public
 
 # View package info
-npm view @boneconsulting/msgraph-calendar
+npm view msteams-azim
 
 # Check who can publish
-npm owner ls @boneconsulting/msgraph-calendar
+npm owner ls msteams-azim
 
 # Add collaborator
-npm owner add username @boneconsulting/msgraph-calendar
+npm owner add username msteams-azim
 ```
 
 ## Support

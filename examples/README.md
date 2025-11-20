@@ -1,4 +1,4 @@
-# Examples for @boneconsulting/msgraph-calendar
+# Examples for msteams-azim
 
 This folder contains working examples demonstrating how to use the Microsoft Graph Calendar package.
 

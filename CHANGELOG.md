@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-11-18
 
 ### Added
-- Initial release of @boneconsulting/msgraph-calendar
+- Initial release of msteams-azim
 - Microsoft Graph authentication with app-only flow (MSAL)
 - Calendar availability retrieval for single users
 - Team availability tracking for multiple team members

@@ -24,16 +24,16 @@
     "scheduling",
     "meetings"
   ],
-  "author": "Bone Consulting",
+  "author": "Azim",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/boneconsulting/msgraph-calendar.git"
+    "url": "https://github.com/BudAzimbud/msteams-azim.git"
   },
   "bugs": {
-    "url": "https://github.com/boneconsulting/msgraph-calendar/issues"
+    "url": "https://github.com/BudAzimbud/msteams-azim/issues"
   },
-  "homepage": "https://github.com/boneconsulting/msgraph-calendar#readme",
+  "homepage": "https://github.com/BudAzimbud/msteams-azim#readme",
   "files": [
     "dist",
     "README.md",

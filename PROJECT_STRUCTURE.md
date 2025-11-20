@@ -1,7 +1,7 @@
 # 📁 Project Structure
 
 ```
-@boneconsulting/msgraph-calendar/
+msteams-azim/
 │
 ├── 📦 Package Files
 │   ├── package.json              ⚙️  NPM package configuration
@@ -113,16 +113,16 @@ dist/
      │ npm publish
      ↓
 📦 NPM Registry
-└── @boneconsulting/msgraph-calendar@1.0.0
+└── msteams-azim@1.0.0
 ```
 
 ## 📥 What Users Get
 
-When users run: `npm install @boneconsulting/msgraph-calendar`
+When users run: `npm install msteams-azim`
 
 They receive:
 ```
-node_modules/@boneconsulting/msgraph-calendar/
+node_modules/msteams-azim/
 ├── dist/
 │   ├── index.js          ← Entry point
 │   ├── index.d.ts        ← TypeScript types
@@ -143,17 +143,17 @@ Users can import like this:
 
 ```typescript
 // Main service
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 
 // Types (if needed separately)
 import { 
   CalendarAvailability,
   TeamMember,
   BookingRequest
-} from '@boneconsulting/msgraph-calendar';
+} from 'msteams-azim';
 
 // Everything
-import * as GraphCalendar from '@boneconsulting/msgraph-calendar';
+import * as GraphCalendar from 'msteams-azim';
 ```
 
 ## 🔐 Environment Setup

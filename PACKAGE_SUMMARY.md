@@ -1,4 +1,4 @@
-# 📦 NPM Package Ready: @boneconsulting/msgraph-calendar
+# 📦 NPM Package Ready: msteams-azim
 
 ## ✅ Package Structure Created
 
@@ -100,13 +100,13 @@ npm publish --access public
 Once published, users can install with:
 
 ```bash
-npm install @boneconsulting/msgraph-calendar moment
+npm install msteams-azim moment
 ```
 
 And use it like:
 
 ```typescript
-import { MSGraphService } from '@boneconsulting/msgraph-calendar';
+import { MSGraphService } from 'msteams-azim';
 
 const service = new MSGraphService({
   clientId: 'xxx',
@@ -125,7 +125,7 @@ const availability = await service.getCalendarAvailability(
 ## 🔧 Package Configuration
 
 ### Package Name
-`@boneconsulting/msgraph-calendar`
+`msteams-azim`
 
 You can change this in `package.json` if needed:
 - Remove `@boneconsulting/` for non-scoped package
