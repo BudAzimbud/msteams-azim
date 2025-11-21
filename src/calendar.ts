@@ -20,6 +20,12 @@ export interface ICalendarService {
     endDate: string
   ): Promise<CalendarAvailability[]>;
 
+  getSchedule(
+    userEmail: string,
+    startDate: string,
+    endDate: string
+  ): Promise<any>;
+
   bookMeeting(booking: BookingRequest): Promise<any>;
 }
 
@@ -94,6 +100,75 @@ export class CalendarService implements ICalendarService {
       return this.generateAvailability(startDate, endDate, scheduleItems);
     } catch (error: any) {
       return this.handleCalendarError(error, userEmail, startDate, endDate);
+    }
+  }
+
+  /**
+   * Get raw schedule from Microsoft Graph
+   * Returns the full schedule response including all events and availability view
+   * 
+   * @param userEmail - Email address of the user
+   * @param startDate - Start date in YYYY-MM-DD format
+   * @param endDate - End date in YYYY-MM-DD format
+   * @returns Raw schedule response from Microsoft Graph API
+   * 
+   * @example
+   * ```typescript
+   * const schedule = await calendarService.getSchedule(
+   *   'user@example.com',
+   *   '2024-01-01',
+   *   '2024-01-07'
+   * );
+   * 
+   * console.log('Schedule items:', schedule.value[0].scheduleItems);
+   * console.log('Availability view:', schedule.value[0].availabilityView);
+   * ```
+   */
+  async getSchedule(
+    userEmail: string,
+    startDate: string,
+    endDate: string
+  ): Promise<any> {
+    // Validate inputs
+    Validator.validateEmail(userEmail);
+    Validator.validateDateRange(startDate, endDate);
+
+    try {
+      this.logger.info(
+        `Fetching schedule for ${userEmail} from ${startDate} to ${endDate}`
+      );
+
+      const client = await this.authProvider.getClient();
+
+      const startDateTime = moment(startDate)
+        .startOf("day")
+        .format("YYYY-MM-DDTHH:mm:ss");
+
+      const endDateTime = moment(endDate)
+        .endOf("day")
+        .format("YYYY-MM-DDTHH:mm:ss");
+
+      const response = await this.fetchScheduleFromGraph(
+        client,
+        userEmail,
+        startDateTime,
+        endDateTime
+      );
+
+      this.logger.info('Schedule fetched successfully');
+      return response;
+    } catch (error: any) {
+      this.logger.error('Failed to fetch schedule:', error);
+
+      if (error instanceof PermissionError || error instanceof ResourceNotFoundError) {
+        throw error;
+      }
+
+      if (error.statusCode === 404) {
+        throw new ResourceNotFoundError('User', userEmail);
+      }
+
+      throw new ValidationError(`Failed to fetch schedule: ${error.message}`);
     }
   }
 

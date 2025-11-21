@@ -1,6 +1,6 @@
 {
   "name": "msteams-azim",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A reusable Microsoft Graph service for managing calendar availability and bookings in Singapore timezone",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

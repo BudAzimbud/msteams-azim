@@ -93,7 +93,37 @@ console.log(availability);
 */
 ```
 
-### 2. Team Availability
+### 2. Get Raw Calendar Schedule
+
+```typescript
+// Get raw schedule data with all events from Microsoft Graph
+const schedule = await graphService.getCalendarSchedule(
+  'user@example.com',
+  '2024-01-01',
+  '2024-01-07'
+);
+
+// Access schedule items (calendar events)
+const events = schedule.value[0].scheduleItems;
+events.forEach(event => {
+  console.log(`Event: ${event.subject}`);
+  console.log(`Start: ${event.start.dateTime}`);
+  console.log(`End: ${event.end.dateTime}`);
+  console.log(`Status: ${event.status}`);
+});
+
+// Access availability view (0=Free, 1=Tentative, 2=Busy, 3=OOF, 4=WorkingElsewhere)
+const availabilityView = schedule.value[0].availabilityView;
+console.log('Availability view:', availabilityView);
+
+// Access working hours if configured
+const workingHours = schedule.value[0].workingHours;
+if (workingHours) {
+  console.log('Working hours:', workingHours);
+}
+```
+
+### 3. Team Availability
 
 ```typescript
 // Set team members
@@ -121,7 +151,7 @@ console.log(teamAvailability);
 */
 ```
 
-### 3. Consolidated Team Availability
+### 4. Consolidated Team Availability
 
 ```typescript
 // Get combined availability (shows slots where ANY team member is available)
@@ -142,7 +172,7 @@ console.log(consolidated);
 */
 ```
 
-### 4. Book a Meeting
+### 5. Book a Meeting
 
 ```typescript
 const booking = await graphService.bookMeeting({
@@ -160,7 +190,7 @@ console.log('Meeting booked:', booking.id);
 console.log('Teams link:', booking.onlineMeeting.joinUrl);
 ```
 
-### 5. Custom Working Hours
+### 6. Custom Working Hours
 
 ```typescript
 const graphService = new MSGraphService({
@@ -175,7 +205,7 @@ const graphService = new MSGraphService({
 });
 ```
 
-### 6. Diagnose Setup
+### 7. Diagnose Setup
 
 ```typescript
 // Run diagnostic to check configuration and permissions
@@ -210,6 +240,9 @@ Tests Microsoft Graph API connectivity.
 
 ##### `getCalendarAvailability(userEmail: string, startDate: string, endDate: string): Promise<CalendarAvailability[]>`
 Get calendar availability for a specific user.
+
+##### `getCalendarSchedule(userEmail: string, startDate: string, endDate: string): Promise<any>`
+Get raw calendar schedule data from Microsoft Graph including all events and availability view.
 
 ##### `getTeamAvailability(startDate: string, endDate: string): Promise<TeamAvailability>`
 Get availability for all configured team members.

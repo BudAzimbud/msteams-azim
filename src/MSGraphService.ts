@@ -185,6 +185,53 @@ export class MSGraphService {
   }
 
   /**
+   * Get raw calendar schedule from Microsoft Graph
+   * Returns the complete schedule response including all events and availability data
+   * 
+   * @param userEmail - Email address of the user
+   * @param startDate - Start date in YYYY-MM-DD format
+   * @param endDate - End date in YYYY-MM-DD format
+   * @returns Raw schedule response from Microsoft Graph
+   * 
+   * @throws {ValidationError} If input validation fails
+   * @throws {AuthenticationError} If authentication fails
+   * @throws {PermissionError} If insufficient permissions
+   * @throws {ResourceNotFoundError} If user not found
+   * 
+   * @example
+   * ```typescript
+   * const schedule = await service.getCalendarSchedule(
+   *   'user@example.com',
+   *   '2024-01-01',
+   *   '2024-01-07'
+   * );
+   * 
+   * // Access schedule items (events)
+   * const events = schedule.value[0].scheduleItems;
+   * console.log('Events:', events);
+   * 
+   * // Access availability view
+   * const availabilityView = schedule.value[0].availabilityView;
+   * console.log('Availability:', availabilityView);
+   * 
+   * // Access working hours if available
+   * const workingHours = schedule.value[0].workingHours;
+   * console.log('Working hours:', workingHours);
+   * ```
+   */
+  async getCalendarSchedule(
+    userEmail: string,
+    startDate: string,
+    endDate: string
+  ): Promise<any> {
+    return await this.calendarService.getSchedule(
+      userEmail,
+      startDate,
+      endDate
+    );
+  }
+
+  /**
    * Get availability for all team members
    * 
    * @param startDate - Start date in YYYY-MM-DD format
