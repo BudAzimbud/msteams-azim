@@ -190,13 +190,14 @@ console.log('Meeting booked:', booking.id);
 console.log('Teams link:', booking.onlineMeeting.joinUrl);
 ```
 
-### 6. Custom Working Hours
+### 6. Custom Working Hours and Timezone
 
 ```typescript
 const graphService = new MSGraphService({
   clientId: process.env.MICROSOFT_CLIENT_ID!,
   clientSecret: process.env.MICROSOFT_CLIENT_SECRET!,
   tenantId: process.env.MICROSOFT_TENANT_ID!,
+  timeZone: 'Tokyo Standard Time',  // Change timezone
   workingHours: {
     start: 8,      // 8 AM
     end: 18,       // 6 PM
@@ -204,6 +205,26 @@ const graphService = new MSGraphService({
   }
 });
 ```
+
+#### Supported Timezones
+
+Microsoft Graph uses **Windows timezone names** (not IANA codes like "Asia/Singapore").
+
+Common timezones:
+- `"Singapore Standard Time"` - Singapore, Malaysia, Philippines
+- `"Tokyo Standard Time"` - Tokyo, Osaka
+- `"China Standard Time"` - Beijing, Hong Kong
+- `"India Standard Time"` - Mumbai, Delhi
+- `"GMT Standard Time"` - London, Dublin
+- `"Eastern Standard Time"` - New York, Toronto
+- `"Pacific Standard Time"` - Los Angeles, Vancouver
+- `"Central Europe Standard Time"` - Berlin, Paris, Rome
+
+**📚 Full timezone list:** [Microsoft Windows Timezone Reference](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11)
+
+⚠️ **Important:** Use Windows timezone names, not IANA codes:
+- ✅ Correct: `"Singapore Standard Time"`
+- ❌ Wrong: `"Asia/Singapore"`
 
 ### 7. Diagnose Setup
 
